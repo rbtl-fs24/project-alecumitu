@@ -7,6 +7,11 @@ processed_data <- raw_data |>
                               "Mater's Thesis" = "Master's Thesis")) |>
   rename(pair_of_gloves = How.many.pairs.of.GLOVES.did.you.use.in.your.experiment.) |>
   rename(gender = Gender) |>
+  rename(experiment_type = What.kind.of.experiment.did.you.do.) |>
+  mutate(experiment_type = recode(experiment_type,
+                                  "New experiment (i.e. a completely new trial in the context of your research)" = "New experiment",
+                                  "Follow-up experiment (i.e. a direct continuation of a previous new experiments)" = "Follow-up experiment",
+                                  "Routine experiment (e.g. long-term media change or cell splitting)" = "Routine experiment")) |>
   rename(ser_pipettes_5ml = How.many.5.ml.SEROLOGICAL.PIPETTES.did.you.use.in.your.experiment.) |>
   rename(ser_pipettes_10ml = How.many.10.ml.SEROLOGICAL.PIPETTES.did.you.use.in.your.experiment.) |>
   rename(ser_pipettes_25ml = How.many.25.ml.SEROLOGICAL.PIPETTES.did.you.use.in.your.experiment.) |>
@@ -20,8 +25,9 @@ processed_data <- raw_data |>
 
 
 processed_data <- processed_data |>
-  select(gender, position, pair_of_gloves, ser_pipettes_5ml, ser_pipettes_10ml, ser_pipettes_25ml, ser_pipettes_50ml, pipette_tips, glass_tips, flasks, falcon_tubes, eppi_tubes, support_opinion)
+  select(gender, position, experiment_type, pair_of_gloves, ser_pipettes_5ml, ser_pipettes_10ml, ser_pipettes_25ml, ser_pipettes_50ml, pipette_tips, glass_tips, flasks, falcon_tubes, eppi_tubes, support_opinion)
 
-glimpse(proc)
+glimpse(processed_data)
 
 write_csv(processed_data, "data/processed/processed_data.csv")
+

@@ -1,16 +1,16 @@
-gender,position,pair_of_gloves,ser_pipettes_5ml,ser_pipettes_10ml,ser_pipettes_25ml,ser_pipettes_50ml,pipette_tips,glass_tips,flasks,falcon_tubes,eppi_tubes,support_opinion
-Woman,Doctorate,3,0,0,0,0,50,5,2,5,5,Maybe
-Woman,Post-doc,5,0,15,5,0,25,5,5,5,2,Yes
-Man,Master's Thesis,3,2,1,1,1,16,2,1,3,3,Maybe
-Man,Bachelor's Thesis,6,2,1,0,0,35,4,3,4,12,Yes
-Man,Bachelor's Thesis,3,4,2,1,0,20,3,3,2,2,Yes
-Woman,Master's Semester Project,1,2,0,0,0,7,1,1,3,1,Yes
-Woman,Master's Semester Project,2,0,0,0,0,35,6,0,4,4,Yes
-Woman,Master's Semester Project,1,1,0,0,0,0,1,0,0,0,Yes
-Woman,Bachelor's Thesis,1,0,0,0,0,0,0,0,0,0,Maybe
-Woman,Bachelor's Thesis,3,0,1,0,0,24,1,0,1,0,Maybe
-Man,Bachelor's Thesis,2,1,0,0,0,0,1,0,0,0,Maybe
-Man,Bachelor's Thesis,3,1,0,0,0,2,1,1,2,1,Yes
-Man,Bachelor's Thesis,2,0,0,0,0,12,0,1,1,4,Yes
-Man,Bachelor's Thesis,1,0,0,0,0,10,1,1,1,0,Yes
-Man,Bachelor's Thesis,2,1,1,1,0,3,0,0,1,0,Yes
+gender,position,experiment_type,pair_of_gloves,ser_pipettes_5ml,ser_pipettes_10ml,ser_pipettes_25ml,ser_pipettes_50ml,pipette_tips,glass_tips,flasks,falcon_tubes,eppi_tubes,support_opinion
+Woman,Doctorate,New experiment,3,0,0,0,0,50,5,2,5,5,Maybe
+Woman,Post-doc,New experiment,5,0,15,5,0,25,5,5,5,2,Yes
+Man,Master's Thesis,New experiment,3,2,1,1,1,16,2,1,3,3,Maybe
+Man,Bachelor's Thesis,Follow-up experiment,6,2,1,0,0,35,4,3,4,12,Yes
+Man,Bachelor's Thesis,Follow-up experiment,3,4,2,1,0,20,3,3,2,2,Yes
+Woman,Master's Semester Project,Routine experiment,1,2,0,0,0,7,1,1,3,1,Yes
+Woman,Master's Semester Project,Follow-up experiment,2,0,0,0,0,35,6,0,4,4,Yes
+Woman,Master's Semester Project,Routine experiment,1,1,0,0,0,0,1,0,0,0,Yes
+Woman,Bachelor's Thesis,Routine experiment,1,0,0,0,0,0,0,0,0,0,Maybe
+Woman,Bachelor's Thesis,Routine experiment,3,0,1,0,0,24,1,0,1,0,Maybe
+Man,Bachelor's Thesis,Routine experiment,2,1,0,0,0,0,1,0,0,0,Maybe
+Man,Bachelor's Thesis,Routine experiment,3,1,0,0,0,2,1,1,2,1,Yes
+Man,Bachelor's Thesis,New experiment,2,0,0,0,0,12,0,1,1,4,Yes
+Man,Bachelor's Thesis,Follow-up experiment,1,0,0,0,0,10,1,1,1,0,Yes
+Man,Bachelor's Thesis,Follow-up experiment,2,1,1,1,0,3,0,0,1,0,Yes

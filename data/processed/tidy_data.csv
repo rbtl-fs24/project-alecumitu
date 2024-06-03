@@ -1,0 +1,151 @@
+"id","gender","position","support_opinion","experiment_type","tool_used","material","quantity","volume"
+1,"Woman","Doctorate","Maybe","New experiment","pair_of_gloves","latex",3,17
+1,"Woman","Doctorate","Maybe","New experiment","ser_pipettes_5ml","glass",0,5
+1,"Woman","Doctorate","Maybe","New experiment","ser_pipettes_10ml","glass",0,10
+1,"Woman","Doctorate","Maybe","New experiment","ser_pipettes_25ml","glass",0,25
+1,"Woman","Doctorate","Maybe","New experiment","ser_pipettes_50ml","glass",0,50
+1,"Woman","Doctorate","Maybe","New experiment","pipette_tips","polyethylene",50,1
+1,"Woman","Doctorate","Maybe","New experiment","glass_tips","glass",5,3
+1,"Woman","Doctorate","Maybe","New experiment","flasks","polystyrene",2,40
+1,"Woman","Doctorate","Maybe","New experiment","falcon_tubes","polypropylene",5,30
+1,"Woman","Doctorate","Maybe","New experiment","eppi_tubes","polypropylene",5,2
+2,"Woman","Post-doc","Yes","New experiment","pair_of_gloves","latex",5,17
+2,"Woman","Post-doc","Yes","New experiment","ser_pipettes_5ml","glass",0,5
+2,"Woman","Post-doc","Yes","New experiment","ser_pipettes_10ml","glass",15,10
+2,"Woman","Post-doc","Yes","New experiment","ser_pipettes_25ml","glass",5,25
+2,"Woman","Post-doc","Yes","New experiment","ser_pipettes_50ml","glass",0,50
+2,"Woman","Post-doc","Yes","New experiment","pipette_tips","polyethylene",25,1
+2,"Woman","Post-doc","Yes","New experiment","glass_tips","glass",5,3
+2,"Woman","Post-doc","Yes","New experiment","flasks","polystyrene",5,40
+2,"Woman","Post-doc","Yes","New experiment","falcon_tubes","polypropylene",5,30
+2,"Woman","Post-doc","Yes","New experiment","eppi_tubes","polypropylene",2,2
+3,"Man","Master's Thesis","Maybe","New experiment","pair_of_gloves","latex",3,17
+3,"Man","Master's Thesis","Maybe","New experiment","ser_pipettes_5ml","glass",2,5
+3,"Man","Master's Thesis","Maybe","New experiment","ser_pipettes_10ml","glass",1,10
+3,"Man","Master's Thesis","Maybe","New experiment","ser_pipettes_25ml","glass",1,25
+3,"Man","Master's Thesis","Maybe","New experiment","ser_pipettes_50ml","glass",1,50
+3,"Man","Master's Thesis","Maybe","New experiment","pipette_tips","polyethylene",16,1
+3,"Man","Master's Thesis","Maybe","New experiment","glass_tips","glass",2,3
+3,"Man","Master's Thesis","Maybe","New experiment","flasks","polystyrene",1,40
+3,"Man","Master's Thesis","Maybe","New experiment","falcon_tubes","polypropylene",3,30
+3,"Man","Master's Thesis","Maybe","New experiment","eppi_tubes","polypropylene",3,2
+4,"Man","Bachelor's Thesis","Yes","Follow-up experiment","pair_of_gloves","latex",6,17
+4,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_5ml","glass",2,5
+4,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_10ml","glass",1,10
+4,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_25ml","glass",0,25
+4,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_50ml","glass",0,50
+4,"Man","Bachelor's Thesis","Yes","Follow-up experiment","pipette_tips","polyethylene",35,1
+4,"Man","Bachelor's Thesis","Yes","Follow-up experiment","glass_tips","glass",4,3
+4,"Man","Bachelor's Thesis","Yes","Follow-up experiment","flasks","polystyrene",3,40
+4,"Man","Bachelor's Thesis","Yes","Follow-up experiment","falcon_tubes","polypropylene",4,30
+4,"Man","Bachelor's Thesis","Yes","Follow-up experiment","eppi_tubes","polypropylene",12,2
+5,"Man","Bachelor's Thesis","Yes","Follow-up experiment","pair_of_gloves","latex",3,17
+5,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_5ml","glass",4,5
+5,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_10ml","glass",2,10
+5,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_25ml","glass",1,25
+5,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_50ml","glass",0,50
+5,"Man","Bachelor's Thesis","Yes","Follow-up experiment","pipette_tips","polyethylene",20,1
+5,"Man","Bachelor's Thesis","Yes","Follow-up experiment","glass_tips","glass",3,3
+5,"Man","Bachelor's Thesis","Yes","Follow-up experiment","flasks","polystyrene",3,40
+5,"Man","Bachelor's Thesis","Yes","Follow-up experiment","falcon_tubes","polypropylene",2,30
+5,"Man","Bachelor's Thesis","Yes","Follow-up experiment","eppi_tubes","polypropylene",2,2
+6,"Woman","Master's Semester Project","Yes","Routine experiment","pair_of_gloves","latex",1,17
+6,"Woman","Master's Semester Project","Yes","Routine experiment","ser_pipettes_5ml","glass",2,5
+6,"Woman","Master's Semester Project","Yes","Routine experiment","ser_pipettes_10ml","glass",0,10
+6,"Woman","Master's Semester Project","Yes","Routine experiment","ser_pipettes_25ml","glass",0,25
+6,"Woman","Master's Semester Project","Yes","Routine experiment","ser_pipettes_50ml","glass",0,50
+6,"Woman","Master's Semester Project","Yes","Routine experiment","pipette_tips","polyethylene",7,1
+6,"Woman","Master's Semester Project","Yes","Routine experiment","glass_tips","glass",1,3
+6,"Woman","Master's Semester Project","Yes","Routine experiment","flasks","polystyrene",1,40
+6,"Woman","Master's Semester Project","Yes","Routine experiment","falcon_tubes","polypropylene",3,30
+6,"Woman","Master's Semester Project","Yes","Routine experiment","eppi_tubes","polypropylene",1,2
+7,"Woman","Master's Semester Project","Yes","Follow-up experiment","pair_of_gloves","latex",2,17
+7,"Woman","Master's Semester Project","Yes","Follow-up experiment","ser_pipettes_5ml","glass",0,5
+7,"Woman","Master's Semester Project","Yes","Follow-up experiment","ser_pipettes_10ml","glass",0,10
+7,"Woman","Master's Semester Project","Yes","Follow-up experiment","ser_pipettes_25ml","glass",0,25
+7,"Woman","Master's Semester Project","Yes","Follow-up experiment","ser_pipettes_50ml","glass",0,50
+7,"Woman","Master's Semester Project","Yes","Follow-up experiment","pipette_tips","polyethylene",35,1
+7,"Woman","Master's Semester Project","Yes","Follow-up experiment","glass_tips","glass",6,3
+7,"Woman","Master's Semester Project","Yes","Follow-up experiment","flasks","polystyrene",0,40
+7,"Woman","Master's Semester Project","Yes","Follow-up experiment","falcon_tubes","polypropylene",4,30
+7,"Woman","Master's Semester Project","Yes","Follow-up experiment","eppi_tubes","polypropylene",4,2
+8,"Woman","Master's Semester Project","Yes","Routine experiment","pair_of_gloves","latex",1,17
+8,"Woman","Master's Semester Project","Yes","Routine experiment","ser_pipettes_5ml","glass",1,5
+8,"Woman","Master's Semester Project","Yes","Routine experiment","ser_pipettes_10ml","glass",0,10
+8,"Woman","Master's Semester Project","Yes","Routine experiment","ser_pipettes_25ml","glass",0,25
+8,"Woman","Master's Semester Project","Yes","Routine experiment","ser_pipettes_50ml","glass",0,50
+8,"Woman","Master's Semester Project","Yes","Routine experiment","pipette_tips","polyethylene",0,1
+8,"Woman","Master's Semester Project","Yes","Routine experiment","glass_tips","glass",1,3
+8,"Woman","Master's Semester Project","Yes","Routine experiment","flasks","polystyrene",0,40
+8,"Woman","Master's Semester Project","Yes","Routine experiment","falcon_tubes","polypropylene",0,30
+8,"Woman","Master's Semester Project","Yes","Routine experiment","eppi_tubes","polypropylene",0,2
+9,"Woman","Bachelor's Thesis","Maybe","Routine experiment","pair_of_gloves","latex",1,17
+9,"Woman","Bachelor's Thesis","Maybe","Routine experiment","ser_pipettes_5ml","glass",0,5
+9,"Woman","Bachelor's Thesis","Maybe","Routine experiment","ser_pipettes_10ml","glass",0,10
+9,"Woman","Bachelor's Thesis","Maybe","Routine experiment","ser_pipettes_25ml","glass",0,25
+9,"Woman","Bachelor's Thesis","Maybe","Routine experiment","ser_pipettes_50ml","glass",0,50
+9,"Woman","Bachelor's Thesis","Maybe","Routine experiment","pipette_tips","polyethylene",0,1
+9,"Woman","Bachelor's Thesis","Maybe","Routine experiment","glass_tips","glass",0,3
+9,"Woman","Bachelor's Thesis","Maybe","Routine experiment","flasks","polystyrene",0,40
+9,"Woman","Bachelor's Thesis","Maybe","Routine experiment","falcon_tubes","polypropylene",0,30
+9,"Woman","Bachelor's Thesis","Maybe","Routine experiment","eppi_tubes","polypropylene",0,2
+10,"Woman","Bachelor's Thesis","Maybe","Routine experiment","pair_of_gloves","latex",3,17
+10,"Woman","Bachelor's Thesis","Maybe","Routine experiment","ser_pipettes_5ml","glass",0,5
+10,"Woman","Bachelor's Thesis","Maybe","Routine experiment","ser_pipettes_10ml","glass",1,10
+10,"Woman","Bachelor's Thesis","Maybe","Routine experiment","ser_pipettes_25ml","glass",0,25
+10,"Woman","Bachelor's Thesis","Maybe","Routine experiment","ser_pipettes_50ml","glass",0,50
+10,"Woman","Bachelor's Thesis","Maybe","Routine experiment","pipette_tips","polyethylene",24,1
+10,"Woman","Bachelor's Thesis","Maybe","Routine experiment","glass_tips","glass",1,3
+10,"Woman","Bachelor's Thesis","Maybe","Routine experiment","flasks","polystyrene",0,40
+10,"Woman","Bachelor's Thesis","Maybe","Routine experiment","falcon_tubes","polypropylene",1,30
+10,"Woman","Bachelor's Thesis","Maybe","Routine experiment","eppi_tubes","polypropylene",0,2
+11,"Man","Bachelor's Thesis","Maybe","Routine experiment","pair_of_gloves","latex",2,17
+11,"Man","Bachelor's Thesis","Maybe","Routine experiment","ser_pipettes_5ml","glass",1,5
+11,"Man","Bachelor's Thesis","Maybe","Routine experiment","ser_pipettes_10ml","glass",0,10
+11,"Man","Bachelor's Thesis","Maybe","Routine experiment","ser_pipettes_25ml","glass",0,25
+11,"Man","Bachelor's Thesis","Maybe","Routine experiment","ser_pipettes_50ml","glass",0,50
+11,"Man","Bachelor's Thesis","Maybe","Routine experiment","pipette_tips","polyethylene",0,1
+11,"Man","Bachelor's Thesis","Maybe","Routine experiment","glass_tips","glass",1,3
+11,"Man","Bachelor's Thesis","Maybe","Routine experiment","flasks","polystyrene",0,40
+11,"Man","Bachelor's Thesis","Maybe","Routine experiment","falcon_tubes","polypropylene",0,30
+11,"Man","Bachelor's Thesis","Maybe","Routine experiment","eppi_tubes","polypropylene",0,2
+12,"Man","Bachelor's Thesis","Yes","Routine experiment","pair_of_gloves","latex",3,17
+12,"Man","Bachelor's Thesis","Yes","Routine experiment","ser_pipettes_5ml","glass",1,5
+12,"Man","Bachelor's Thesis","Yes","Routine experiment","ser_pipettes_10ml","glass",0,10
+12,"Man","Bachelor's Thesis","Yes","Routine experiment","ser_pipettes_25ml","glass",0,25
+12,"Man","Bachelor's Thesis","Yes","Routine experiment","ser_pipettes_50ml","glass",0,50
+12,"Man","Bachelor's Thesis","Yes","Routine experiment","pipette_tips","polyethylene",2,1
+12,"Man","Bachelor's Thesis","Yes","Routine experiment","glass_tips","glass",1,3
+12,"Man","Bachelor's Thesis","Yes","Routine experiment","flasks","polystyrene",1,40
+12,"Man","Bachelor's Thesis","Yes","Routine experiment","falcon_tubes","polypropylene",2,30
+12,"Man","Bachelor's Thesis","Yes","Routine experiment","eppi_tubes","polypropylene",1,2
+13,"Man","Bachelor's Thesis","Yes","New experiment","pair_of_gloves","latex",2,17
+13,"Man","Bachelor's Thesis","Yes","New experiment","ser_pipettes_5ml","glass",0,5
+13,"Man","Bachelor's Thesis","Yes","New experiment","ser_pipettes_10ml","glass",0,10
+13,"Man","Bachelor's Thesis","Yes","New experiment","ser_pipettes_25ml","glass",0,25
+13,"Man","Bachelor's Thesis","Yes","New experiment","ser_pipettes_50ml","glass",0,50
+13,"Man","Bachelor's Thesis","Yes","New experiment","pipette_tips","polyethylene",12,1
+13,"Man","Bachelor's Thesis","Yes","New experiment","glass_tips","glass",0,3
+13,"Man","Bachelor's Thesis","Yes","New experiment","flasks","polystyrene",1,40
+13,"Man","Bachelor's Thesis","Yes","New experiment","falcon_tubes","polypropylene",1,30
+13,"Man","Bachelor's Thesis","Yes","New experiment","eppi_tubes","polypropylene",4,2
+14,"Man","Bachelor's Thesis","Yes","Follow-up experiment","pair_of_gloves","latex",1,17
+14,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_5ml","glass",0,5
+14,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_10ml","glass",0,10
+14,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_25ml","glass",0,25
+14,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_50ml","glass",0,50
+14,"Man","Bachelor's Thesis","Yes","Follow-up experiment","pipette_tips","polyethylene",10,1
+14,"Man","Bachelor's Thesis","Yes","Follow-up experiment","glass_tips","glass",1,3
+14,"Man","Bachelor's Thesis","Yes","Follow-up experiment","flasks","polystyrene",1,40
+14,"Man","Bachelor's Thesis","Yes","Follow-up experiment","falcon_tubes","polypropylene",1,30
+14,"Man","Bachelor's Thesis","Yes","Follow-up experiment","eppi_tubes","polypropylene",0,2
+15,"Man","Bachelor's Thesis","Yes","Follow-up experiment","pair_of_gloves","latex",2,17
+15,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_5ml","glass",1,5
+15,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_10ml","glass",1,10
+15,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_25ml","glass",1,25
+15,"Man","Bachelor's Thesis","Yes","Follow-up experiment","ser_pipettes_50ml","glass",0,50
+15,"Man","Bachelor's Thesis","Yes","Follow-up experiment","pipette_tips","polyethylene",3,1
+15,"Man","Bachelor's Thesis","Yes","Follow-up experiment","glass_tips","glass",0,3
+15,"Man","Bachelor's Thesis","Yes","Follow-up experiment","flasks","polystyrene",0,40
+15,"Man","Bachelor's Thesis","Yes","Follow-up experiment","falcon_tubes","polypropylene",1,30
+15,"Man","Bachelor's Thesis","Yes","Follow-up experiment","eppi_tubes","polypropylene",0,2
