@@ -11,6 +11,50 @@ table-of-contents: true
 
 # Results
 
+```{r}
+library(dplyr)
+library(ggthemes)
+library(gt)
+```
+
+```{r}
+library(readr)
+
+tidy_data <- read_rds(here::here("data/processed/tidy_data.rds"))
+```
+
+```{r}
+summary_stats <- tidy_data |>
+  group_by(tool_used) |>
+  summarise(
+    count = sum(quantity),
+    mean = round(mean(quantity), 1),
+    median = round(median(quantity), 1),
+    sd = round(sd(quantity), 1)
+  )
+
+
+```
+
+See @tbl-tools for data about tools.
+
+```{r}
+#| label: tbl-tools
+#| tbl-cap: Average number of single-use lab tools.
+
+summary_stats |> 
+  gt() |> 
+  tab_header(title = "Summary Statistics for Each Tool Used") |> 
+  tab_source_note("Note: The summary statistics are based on the quantity of each tool used.") |> 
+  cols_label(
+    tool_used = "Tool",
+    count = "Count",
+    mean = "Mean",
+    median = "Median",
+    sd = "Standard Deviation"
+  )
+```
+
 # Conclusions
 
 # References

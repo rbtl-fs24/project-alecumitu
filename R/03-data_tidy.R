@@ -39,4 +39,5 @@ tidy_data <- processed_data |>
 
 
 # Save the new data
-write.csv(tidy_data, file = "data/processed/tidy_data.csv", row.names = FALSE)
+write.csv(tidy_data, "data/processed/tidy_data.csv")
+write_rds(tidy_data, "data/processed/tidy_data.rds")
