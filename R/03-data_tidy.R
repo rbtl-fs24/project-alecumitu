@@ -37,6 +37,8 @@ tidy_data <- processed_data |>
   ) |>
   select(id, gender, position, support_opinion, experiment_type, tool_used, material, quantity, volume)
 
+tidy_data <- tidy_data |>
+  mutate(total_volume = quantity * volume)
 
 # Save the new data
 write.csv(tidy_data, "data/processed/tidy_data.csv")
