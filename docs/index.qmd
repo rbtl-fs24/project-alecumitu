@@ -5,12 +5,6 @@ date: 6 June 2024
 table-of-contents: true 
 ---
 
-# Introduction
-
-# Methods
-
-# Results
-
 ```{r}
 #| label: load-packages
 #| warning: false
@@ -18,15 +12,80 @@ library(dplyr)
 library(ggthemes)
 library(gt)
 library(ggplot2)
-```
-
-```{r}
 library(readr)
-
-tidy_data <- read_rds(here::here("data/processed/tidy_data.rds"))
 ```
 
+# Introduction
+
+# Methods
+
+In @tbl-survey_metrics we can see that...
+
 ```{r}
+#| label: tbl-survey_metrics
+#| tbl-cap: Statistics of Survey Respondents
+
+processed_data <- read_rds(here::here("data/processed/processed_data.rds"))
+
+# Calculate the summary statistics
+summary_stats <- processed_data |>
+  summarize(
+    num_respondents = n(),
+    gender_pct = paste0(
+      round(sum(gender == "Woman") / num_respondents * 100, 2), "% Women, ",
+      round(sum(gender == "Man") / num_respondents * 100, 2), "% Men"
+    ),
+    support_opinion_pct = paste0(
+      round(sum(support_opinion == "Yes") / num_respondents * 100, 2), "% Yes, ",
+      round(sum(support_opinion == "Maybe") / num_respondents * 100, 2), "% Maybe"
+    ),
+    position_pct = paste0(
+      round(sum(position == "Post-doc") / num_respondents * 100, 2), "% Post-doc, ",
+      round(sum(position == "Doctorate") / num_respondents * 100, 2), "% Doctorate, ",
+      round(sum(position %in% c("Master's Thesis", "Master's Semester Project")) / num_respondents * 100, 2), "% Master, ",
+      round(sum(position == "Bachelor's Thesis") / num_respondents * 100, 2), "% Bachelor"
+    )
+  )
+
+# Create the table using gt()
+summary_stats |>
+  gt() |>
+  cols_label(
+    num_respondents = "Number of Respondents",
+    gender_pct = "Gender",
+    support_opinion_pct = "Do Respondents Think their Lab Receives Enough Support regarding Waste Management?",
+    position_pct = "Level of Education"
+  ) |>
+  cols_width(
+    num_respondents ~ px(100),
+    gender_pct ~ px(160),
+    support_opinion_pct ~ px(400),
+    position_pct ~ px(140)
+  ) |>
+  tab_style(
+    style = cell_text(
+      align = "center",
+      weight = "bold"
+    ),
+    locations = cells_body()
+  ) |>
+  tab_style(
+    style = cell_text(
+      align = "center"
+    ),
+    locations = cells_column_labels()
+  ) |>
+  tab_header(
+    title = "Survey Statistics"
+  )
+
+```
+
+# Results
+
+```{r}
+tidy_data <- read_rds(here::here("data/processed/tidy_data.rds"))
+
 summary_stats <- tidy_data |>
   group_by(tool_used) |>
   summarise(
@@ -73,7 +132,14 @@ ggplot(tidy_data, aes(x = experiment_type, y = total_volume, fill = tool_used)) 
   theme_clean()
 ```
 
+In @fig-material we can see that...
+
 ```{r}
+#| fig-width: 7.5
+#| fig-asp: 0.618
+#| fig-cap: Amount of Different Waste Materials Produced Based on Experiment
+#| label: fig-material
+#| 
 ggplot(tidy_data, aes(x = total_volume, y = material, fill = experiment_type)) +
   geom_bar(stat = "identity", position = "dodge") +
   labs(x = "Total Volume (mL)", y = "Waste Material", fill = "Experiment Type") +

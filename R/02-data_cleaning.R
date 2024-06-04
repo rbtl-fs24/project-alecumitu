@@ -30,4 +30,4 @@ processed_data <- processed_data |>
 glimpse(processed_data)
 
 write_csv(processed_data, "data/processed/processed_data.csv")
-
+write_rds(processed_data, "data/processed/processed_data.rds")
