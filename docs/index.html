@@ -56,7 +56,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="index_files/libs/clipboard/clipboard.min.js"></script>
@@ -147,11 +167,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>Waste management in laboratories is a pressing concern due to the significant amounts of single-use materials, such as plastic tubes, gloves, and pipette tips generated during various experiments. These numbers tend to be even higher in the context of biology labs, due to sterility requirements associated to their research. For example, Urbina et al estimates that laboratories doing biological, medical or agricultural research generated about 5.5 million tonnes of plastic waste in 2014, which is the equivalent of 83% of all plastic recycled in 2012. Not only does this contribute to the rapid increase of plastic that potentially ends up in landfills, but also to the amplification of the greenhouse effect.</p>
-<p>To better understand the usage of single-use material in biology labs, this project surveyed the Macromolecular Engineering Lab at ETH Zürich. The survey investigated how the weekly usage of single-use materials differs based on the type of experiment conducted. By analyzing the data collected, this project aims to provide valuable insights for optimizing waste management practices in biology labs and reducing the environmental footprint of laboratory activities, which is estimated to be about one-third of all indirect greenhouse gas emissions at this university (ETH GreenLabs)</p>
+<p>Waste management in laboratories is a pressing concern due to the significant amounts of single-use materials, such as plastic tubes, gloves, and pipette tips generated during various experiments. These numbers tend to be even higher in the context of biology labs, due to sterility requirements associated to their research. For example, <span class="citation" data-cites="urbina2015labs">Urbina, Watts, and Reardon (<a href="#ref-urbina2015labs" role="doc-biblioref">2015</a>)</span> estimates that laboratories doing biological, medical or agricultural research generated about 5.5 million tonnes of plastic waste in 2014, which is the equivalent of 83% of all plastic recycled in 2012. Not only does this contribute to the rapid increase of plastic that potentially ends up in landfills, but also to the amplification of the greenhouse effect.</p>
+<p>To better understand the usage of single-use materials in biology labs, this project surveyed the Macromolecular Engineering Lab at ETH Zürich. The survey investigated how the weekly usage of single-use materials differs based on the type of experiment conducted. By analyzing the data collected, this research aims to provide valuable insights for optimizing waste management practices in biology labs and reducing the environmental footprint of laboratory activities, which is estimated to be about one-third of all indirect greenhouse gas emissions at ETH. (<span class="citation" data-cites="greenlabs"><span>“<span>GreenLabs</span>”</span> (<a href="#ref-greenlabs" role="doc-biblioref">n.d.</a>)</span>)</p>
 </section>
 <section id="methods" class="level1">
 <h1>Methods</h1>
+<p>Getting inspiration from <span class="citation" data-cites="alves2021case">Alves et al. (<a href="#ref-alves2021case" role="doc-biblioref">2021</a>)</span>, I decided to focus on lab tools that go on the route of the biohazard waste, since they are unsuitable for recycling.</p>
 <p>In <a href="#tbl-survey_metrics" class="quarto-xref">Table&nbsp;1</a> we can see that…</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>survey_metrics <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/final/survey_metrics.rds"</span>))</span>
@@ -166,27 +187,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">position_pct =</span> <span class="st">"Level of Education"</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_width</span>(</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    num_respondents <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">100</span>),</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    gender_pct <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">160</span>),</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    support_opinion_pct <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">400</span>),</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    position_pct <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">140</span>)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">align =</span> <span class="st">"center"</span>,</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">weight =</span> <span class="st">"bold"</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>()</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">align =</span> <span class="st">"center"</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>()</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Survey Statistics"</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    num_respondents <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">100</span>), gender_pct <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">160</span>),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    support_opinion_pct <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">400</span>), position_pct <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">140</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">align =</span> <span class="st">"center"</span>,<span class="at">weight =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>()</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">align =</span> <span class="st">"center"</span>),</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>()</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Survey Statistics"</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-survey_metrics" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-survey_metrics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -195,23 +209,23 @@ Table&nbsp;1: Statistics of Survey Respondents
 <div aria-describedby="tbl-survey_metrics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div>
-<div id="yekgqfhfqf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yekgqfhfqf table {
+<div id="chkjzpkdqt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#chkjzpkdqt table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yekgqfhfqf thead, #yekgqfhfqf tbody, #yekgqfhfqf tfoot, #yekgqfhfqf tr, #yekgqfhfqf td, #yekgqfhfqf th {
+#chkjzpkdqt thead, #chkjzpkdqt tbody, #chkjzpkdqt tfoot, #chkjzpkdqt tr, #chkjzpkdqt td, #chkjzpkdqt th {
   border-style: none;
 }
 
-#yekgqfhfqf p {
+#chkjzpkdqt p {
   margin: 0;
   padding: 0;
 }
 
-#yekgqfhfqf .gt_table {
+#chkjzpkdqt .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -237,12 +251,12 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-left-color: #D3D3D3;
 }
 
-#yekgqfhfqf .gt_caption {
+#chkjzpkdqt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yekgqfhfqf .gt_title {
+#chkjzpkdqt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -254,7 +268,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-bottom-width: 0;
 }
 
-#yekgqfhfqf .gt_subtitle {
+#chkjzpkdqt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -266,7 +280,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-top-width: 0;
 }
 
-#yekgqfhfqf .gt_heading {
+#chkjzpkdqt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -278,13 +292,13 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-right-color: #D3D3D3;
 }
 
-#yekgqfhfqf .gt_bottom_border {
+#chkjzpkdqt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yekgqfhfqf .gt_col_headings {
+#chkjzpkdqt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -299,7 +313,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-right-color: #D3D3D3;
 }
 
-#yekgqfhfqf .gt_col_heading {
+#chkjzpkdqt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -319,7 +333,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   overflow-x: hidden;
 }
 
-#yekgqfhfqf .gt_column_spanner_outer {
+#chkjzpkdqt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -331,15 +345,15 @@ Table&nbsp;1: Statistics of Survey Respondents
   padding-right: 4px;
 }
 
-#yekgqfhfqf .gt_column_spanner_outer:first-child {
+#chkjzpkdqt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yekgqfhfqf .gt_column_spanner_outer:last-child {
+#chkjzpkdqt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yekgqfhfqf .gt_column_spanner {
+#chkjzpkdqt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -351,11 +365,11 @@ Table&nbsp;1: Statistics of Survey Respondents
   width: 100%;
 }
 
-#yekgqfhfqf .gt_spanner_row {
+#chkjzpkdqt .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yekgqfhfqf .gt_group_heading {
+#chkjzpkdqt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -381,7 +395,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   text-align: left;
 }
 
-#yekgqfhfqf .gt_empty_group_heading {
+#chkjzpkdqt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -396,15 +410,15 @@ Table&nbsp;1: Statistics of Survey Respondents
   vertical-align: middle;
 }
 
-#yekgqfhfqf .gt_from_md > :first-child {
+#chkjzpkdqt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yekgqfhfqf .gt_from_md > :last-child {
+#chkjzpkdqt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yekgqfhfqf .gt_row {
+#chkjzpkdqt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -423,7 +437,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   overflow-x: hidden;
 }
 
-#yekgqfhfqf .gt_stub {
+#chkjzpkdqt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -436,7 +450,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   padding-right: 5px;
 }
 
-#yekgqfhfqf .gt_stub_row_group {
+#chkjzpkdqt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -450,15 +464,15 @@ Table&nbsp;1: Statistics of Survey Respondents
   vertical-align: top;
 }
 
-#yekgqfhfqf .gt_row_group_first td {
+#chkjzpkdqt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yekgqfhfqf .gt_row_group_first th {
+#chkjzpkdqt .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yekgqfhfqf .gt_summary_row {
+#chkjzpkdqt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -468,16 +482,16 @@ Table&nbsp;1: Statistics of Survey Respondents
   padding-right: 5px;
 }
 
-#yekgqfhfqf .gt_first_summary_row {
+#chkjzpkdqt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yekgqfhfqf .gt_first_summary_row.thick {
+#chkjzpkdqt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yekgqfhfqf .gt_last_summary_row {
+#chkjzpkdqt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -487,7 +501,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-bottom-color: #D3D3D3;
 }
 
-#yekgqfhfqf .gt_grand_summary_row {
+#chkjzpkdqt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -497,7 +511,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   padding-right: 5px;
 }
 
-#yekgqfhfqf .gt_first_grand_summary_row {
+#chkjzpkdqt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -507,7 +521,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-top-color: #D3D3D3;
 }
 
-#yekgqfhfqf .gt_last_grand_summary_row_top {
+#chkjzpkdqt .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -517,11 +531,11 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-bottom-color: #D3D3D3;
 }
 
-#yekgqfhfqf .gt_striped {
+#chkjzpkdqt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yekgqfhfqf .gt_table_body {
+#chkjzpkdqt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -530,7 +544,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-bottom-color: #D3D3D3;
 }
 
-#yekgqfhfqf .gt_footnotes {
+#chkjzpkdqt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -544,7 +558,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-right-color: #D3D3D3;
 }
 
-#yekgqfhfqf .gt_footnote {
+#chkjzpkdqt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -553,7 +567,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   padding-right: 5px;
 }
 
-#yekgqfhfqf .gt_sourcenotes {
+#chkjzpkdqt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -567,7 +581,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-right-color: #D3D3D3;
 }
 
-#yekgqfhfqf .gt_sourcenote {
+#chkjzpkdqt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -575,63 +589,63 @@ Table&nbsp;1: Statistics of Survey Respondents
   padding-right: 5px;
 }
 
-#yekgqfhfqf .gt_left {
+#chkjzpkdqt .gt_left {
   text-align: left;
 }
 
-#yekgqfhfqf .gt_center {
+#chkjzpkdqt .gt_center {
   text-align: center;
 }
 
-#yekgqfhfqf .gt_right {
+#chkjzpkdqt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yekgqfhfqf .gt_font_normal {
+#chkjzpkdqt .gt_font_normal {
   font-weight: normal;
 }
 
-#yekgqfhfqf .gt_font_bold {
+#chkjzpkdqt .gt_font_bold {
   font-weight: bold;
 }
 
-#yekgqfhfqf .gt_font_italic {
+#chkjzpkdqt .gt_font_italic {
   font-style: italic;
 }
 
-#yekgqfhfqf .gt_super {
+#chkjzpkdqt .gt_super {
   font-size: 65%;
 }
 
-#yekgqfhfqf .gt_footnote_marks {
+#chkjzpkdqt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yekgqfhfqf .gt_asterisk {
+#chkjzpkdqt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yekgqfhfqf .gt_indent_1 {
+#chkjzpkdqt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yekgqfhfqf .gt_indent_2 {
+#chkjzpkdqt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yekgqfhfqf .gt_indent_3 {
+#chkjzpkdqt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yekgqfhfqf .gt_indent_4 {
+#chkjzpkdqt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yekgqfhfqf .gt_indent_5 {
+#chkjzpkdqt .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -690,23 +704,23 @@ Table&nbsp;2: Average number of single-use lab tools.
 <div aria-describedby="tbl-tools-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div>
-<div id="rfgbefuurz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rfgbefuurz table {
+<div id="ggfqefkihc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ggfqefkihc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rfgbefuurz thead, #rfgbefuurz tbody, #rfgbefuurz tfoot, #rfgbefuurz tr, #rfgbefuurz td, #rfgbefuurz th {
+#ggfqefkihc thead, #ggfqefkihc tbody, #ggfqefkihc tfoot, #ggfqefkihc tr, #ggfqefkihc td, #ggfqefkihc th {
   border-style: none;
 }
 
-#rfgbefuurz p {
+#ggfqefkihc p {
   margin: 0;
   padding: 0;
 }
 
-#rfgbefuurz .gt_table {
+#ggfqefkihc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -732,12 +746,12 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-left-color: #D3D3D3;
 }
 
-#rfgbefuurz .gt_caption {
+#ggfqefkihc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rfgbefuurz .gt_title {
+#ggfqefkihc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -749,7 +763,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-bottom-width: 0;
 }
 
-#rfgbefuurz .gt_subtitle {
+#ggfqefkihc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -761,7 +775,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-top-width: 0;
 }
 
-#rfgbefuurz .gt_heading {
+#ggfqefkihc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -773,13 +787,13 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-right-color: #D3D3D3;
 }
 
-#rfgbefuurz .gt_bottom_border {
+#ggfqefkihc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rfgbefuurz .gt_col_headings {
+#ggfqefkihc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -794,7 +808,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-right-color: #D3D3D3;
 }
 
-#rfgbefuurz .gt_col_heading {
+#ggfqefkihc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -814,7 +828,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   overflow-x: hidden;
 }
 
-#rfgbefuurz .gt_column_spanner_outer {
+#ggfqefkihc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -826,15 +840,15 @@ Table&nbsp;2: Average number of single-use lab tools.
   padding-right: 4px;
 }
 
-#rfgbefuurz .gt_column_spanner_outer:first-child {
+#ggfqefkihc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rfgbefuurz .gt_column_spanner_outer:last-child {
+#ggfqefkihc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rfgbefuurz .gt_column_spanner {
+#ggfqefkihc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -846,11 +860,11 @@ Table&nbsp;2: Average number of single-use lab tools.
   width: 100%;
 }
 
-#rfgbefuurz .gt_spanner_row {
+#ggfqefkihc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rfgbefuurz .gt_group_heading {
+#ggfqefkihc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -876,7 +890,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   text-align: left;
 }
 
-#rfgbefuurz .gt_empty_group_heading {
+#ggfqefkihc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -891,15 +905,15 @@ Table&nbsp;2: Average number of single-use lab tools.
   vertical-align: middle;
 }
 
-#rfgbefuurz .gt_from_md > :first-child {
+#ggfqefkihc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rfgbefuurz .gt_from_md > :last-child {
+#ggfqefkihc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rfgbefuurz .gt_row {
+#ggfqefkihc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -918,7 +932,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   overflow-x: hidden;
 }
 
-#rfgbefuurz .gt_stub {
+#ggfqefkihc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -931,7 +945,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   padding-right: 5px;
 }
 
-#rfgbefuurz .gt_stub_row_group {
+#ggfqefkihc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -945,15 +959,15 @@ Table&nbsp;2: Average number of single-use lab tools.
   vertical-align: top;
 }
 
-#rfgbefuurz .gt_row_group_first td {
+#ggfqefkihc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rfgbefuurz .gt_row_group_first th {
+#ggfqefkihc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rfgbefuurz .gt_summary_row {
+#ggfqefkihc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -963,16 +977,16 @@ Table&nbsp;2: Average number of single-use lab tools.
   padding-right: 5px;
 }
 
-#rfgbefuurz .gt_first_summary_row {
+#ggfqefkihc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rfgbefuurz .gt_first_summary_row.thick {
+#ggfqefkihc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rfgbefuurz .gt_last_summary_row {
+#ggfqefkihc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -982,7 +996,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-bottom-color: #D3D3D3;
 }
 
-#rfgbefuurz .gt_grand_summary_row {
+#ggfqefkihc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -992,7 +1006,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   padding-right: 5px;
 }
 
-#rfgbefuurz .gt_first_grand_summary_row {
+#ggfqefkihc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1002,7 +1016,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-top-color: #D3D3D3;
 }
 
-#rfgbefuurz .gt_last_grand_summary_row_top {
+#ggfqefkihc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1012,11 +1026,11 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-bottom-color: #D3D3D3;
 }
 
-#rfgbefuurz .gt_striped {
+#ggfqefkihc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rfgbefuurz .gt_table_body {
+#ggfqefkihc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1025,7 +1039,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-bottom-color: #D3D3D3;
 }
 
-#rfgbefuurz .gt_footnotes {
+#ggfqefkihc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1039,7 +1053,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-right-color: #D3D3D3;
 }
 
-#rfgbefuurz .gt_footnote {
+#ggfqefkihc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1048,7 +1062,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   padding-right: 5px;
 }
 
-#rfgbefuurz .gt_sourcenotes {
+#ggfqefkihc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1062,7 +1076,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-right-color: #D3D3D3;
 }
 
-#rfgbefuurz .gt_sourcenote {
+#ggfqefkihc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1070,63 +1084,63 @@ Table&nbsp;2: Average number of single-use lab tools.
   padding-right: 5px;
 }
 
-#rfgbefuurz .gt_left {
+#ggfqefkihc .gt_left {
   text-align: left;
 }
 
-#rfgbefuurz .gt_center {
+#ggfqefkihc .gt_center {
   text-align: center;
 }
 
-#rfgbefuurz .gt_right {
+#ggfqefkihc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rfgbefuurz .gt_font_normal {
+#ggfqefkihc .gt_font_normal {
   font-weight: normal;
 }
 
-#rfgbefuurz .gt_font_bold {
+#ggfqefkihc .gt_font_bold {
   font-weight: bold;
 }
 
-#rfgbefuurz .gt_font_italic {
+#ggfqefkihc .gt_font_italic {
   font-style: italic;
 }
 
-#rfgbefuurz .gt_super {
+#ggfqefkihc .gt_super {
   font-size: 65%;
 }
 
-#rfgbefuurz .gt_footnote_marks {
+#ggfqefkihc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rfgbefuurz .gt_asterisk {
+#ggfqefkihc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rfgbefuurz .gt_indent_1 {
+#ggfqefkihc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rfgbefuurz .gt_indent_2 {
+#ggfqefkihc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rfgbefuurz .gt_indent_3 {
+#ggfqefkihc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rfgbefuurz .gt_indent_4 {
+#ggfqefkihc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rfgbefuurz .gt_indent_5 {
+#ggfqefkihc .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1273,11 +1287,22 @@ Figure&nbsp;2: Amount of Different Waste Materials Produced Based on Experiment
 <section id="conclusions" class="level1">
 <h1>Conclusions</h1>
 </section>
-<section id="references" class="level1">
-<h1>References</h1>
+<section id="references" class="level1 unnumbered">
+
+
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-alves2021case" class="csl-entry" role="listitem">
+Alves, Joana, Fiona A. Sargison, Hanne Stawarz, Willow B. Fox, Samuel G. Huete, Amany Hassan, Brian McTeir, and Amy C. Pickering. 2021. <span>“A Case Report: Insights into Reducing Plastic Waste in a Microbiology Laboratory.”</span> <em>Access Microbiology</em> 3 (3): 000173. <a href="https://doi.org/10.1099/acmi.0.000173">https://doi.org/10.1099/acmi.0.000173</a>.
+</div>
+<div id="ref-greenlabs" class="csl-entry" role="listitem">
+<span>“<span>GreenLabs</span>.”</span> n.d. https://ethz.ch/en/the-eth-zurich/sustainability/net-zero/green-labs.html. Accessed June 4, 2024.
+</div>
+<div id="ref-urbina2015labs" class="csl-entry" role="listitem">
+Urbina, Mauricio A., Andrew J. R. Watts, and Erin E. Reardon. 2015. <span>“Labs Should Cut Plastic Waste Too.”</span> <em>Nature</em> 528 (7583): 479–79. <a href="https://doi.org/10.1038/528479c">https://doi.org/10.1038/528479c</a>.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

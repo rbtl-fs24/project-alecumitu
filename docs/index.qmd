@@ -12,6 +12,7 @@ date: today
 abstract: 
   The abstract will be placed here. Breaks can be added by hitting return on the keyboard.
 license: "CC BY"
+bibliography: bibliography.bib
 editor: visual
 table-of-contents: true 
 ---
@@ -28,11 +29,13 @@ library(readr)
 
 # Introduction
 
-Waste management in laboratories is a pressing concern due to the significant amounts of single-use materials, such as plastic tubes, gloves, and pipette tips generated during various experiments. These numbers tend to be even higher in the context of biology labs, due to sterility requirements associated to their research. For example, Urbina et al estimates that laboratories doing biological, medical or agricultural research generated about 5.5 million tonnes of plastic waste in 2014, which is the equivalent of 83% of all plastic recycled in 2012. Not only does this contribute to the rapid increase of plastic that potentially ends up in landfills, but also to the amplification of the greenhouse effect.
+Waste management in laboratories is a pressing concern due to the significant amounts of single-use materials, such as plastic tubes, gloves, and pipette tips generated during various experiments. These numbers tend to be even higher in the context of biology labs, due to sterility requirements associated to their research. For example, @urbina2015labs estimates that laboratories doing biological, medical or agricultural research generated about 5.5 million tonnes of plastic waste in 2014, which is the equivalent of 83% of all plastic recycled in 2012. Not only does this contribute to the rapid increase of plastic that potentially ends up in landfills, but also to the amplification of the greenhouse effect.
 
-To better understand the usage of single-use material in biology labs, this project surveyed the Macromolecular Engineering Lab at ETH Zürich. The survey investigated how the weekly usage of single-use materials differs based on the type of experiment conducted. By analyzing the data collected, this project aims to provide valuable insights for optimizing waste management practices in biology labs and reducing the environmental footprint of laboratory activities, which is estimated to be about one-third of all indirect greenhouse gas emissions at this university (ETH GreenLabs)
+To better understand the usage of single-use materials in biology labs, this project surveyed the Macromolecular Engineering Lab at ETH Zürich. The survey investigated how the weekly usage of single-use materials differs based on the type of experiment conducted. By analyzing the data collected, this research aims to provide valuable insights for optimizing waste management practices in biology labs and reducing the environmental footprint of laboratory activities, which is estimated to be about one-third of all indirect greenhouse gas emissions at ETH. (@greenlabs)
 
 # Methods
+
+Getting inspiration from @alves2021case, I decided to focus on lab tools that go on the route of the biohazard waste, since they are unsuitable for recycling.
 
 In @tbl-survey_metrics we can see that...
 
@@ -52,22 +55,15 @@ survey_metrics |>
     position_pct = "Level of Education"
   ) |>
   cols_width(
-    num_respondents ~ px(100),
-    gender_pct ~ px(160),
-    support_opinion_pct ~ px(400),
-    position_pct ~ px(140)
+    num_respondents ~ px(100), gender_pct ~ px(160),
+    support_opinion_pct ~ px(400), position_pct ~ px(140)
   ) |>
   tab_style(
-    style = cell_text(
-      align = "center",
-      weight = "bold"
-    ),
+    style = cell_text(align = "center",weight = "bold"),
     locations = cells_body()
   ) |>
   tab_style(
-    style = cell_text(
-      align = "center"
-    ),
+    style = cell_text(align = "center"),
     locations = cells_column_labels()
   ) |>
   tab_header(
