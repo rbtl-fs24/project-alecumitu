@@ -45,14 +45,13 @@ See @tbl-tools for data about tools.
 summary_stats |> 
   gt() |> 
   tab_header(title = "Summary Statistics for Each Tool Used") |> 
-  tab_source_note("Note: The summary statistics are based on the quantity of each tool used.") |> 
   cols_label(
     tool_used = "Tool",
     count = "Count",
     mean = "Mean",
     median = "Median",
     sd = "Standard Deviation"
-  )
+  ) 
 ```
 
 # Conclusions
