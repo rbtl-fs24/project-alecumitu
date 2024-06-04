@@ -73,6 +73,13 @@ ggplot(tidy_data, aes(x = experiment_type, y = total_volume, fill = tool_used)) 
   theme_clean()
 ```
 
+```{r}
+ggplot(tidy_data, aes(x = total_volume, y = material, fill = experiment_type)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(x = "Total Volume (mL)", y = "Waste Material", fill = "Experiment Type") +
+  theme_clean()
+```
+
 # Conclusions
 
 # References
