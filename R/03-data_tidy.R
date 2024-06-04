@@ -38,6 +38,22 @@ tidy_data <- processed_data |>
   select(id, gender, position, support_opinion, experiment_type, tool_used, material, quantity, volume)
 
 tidy_data <- tidy_data |>
+  mutate(
+    tool_used = case_when(
+      tool_used == "eppi_tubes" ~ "Eppendorf Tubes",
+      tool_used == "falcon_tubes" ~ "Falcon Tubes",
+      tool_used == "pipette_tips" ~ "Pipette Tips",
+      tool_used == "glass_tips" ~ "Glass Tips",
+      tool_used == "flasks" ~ "Flasks",
+      tool_used == "pair_of_gloves" ~ "Pairs of Gloves",
+      tool_used == "ser_pipettes_5ml" ~ "Serological Pipettes (5ml)",
+      tool_used == "ser_pipettes_10ml" ~ "Serological Pipettes (10ml)",
+      tool_used == "ser_pipettes_25ml" ~ "Serological Pipettes (25ml)",
+      tool_used == "ser_pipettes_50ml" ~ "Serological Pipettes (50ml)"
+    )
+  )
+
+tidy_data <- tidy_data |>
   mutate(total_volume = quantity * volume)
 
 # Save the new data
