@@ -12,9 +12,12 @@ table-of-contents: true
 # Results
 
 ```{r}
+#| label: load-packages
+#| warning: false
 library(dplyr)
 library(ggthemes)
 library(gt)
+library(ggplot2)
 ```
 
 ```{r}
@@ -52,6 +55,22 @@ summary_stats |>
     median = "Median",
     sd = "Standard Deviation"
   ) 
+```
+
+In @fig-waste we see that....
+
+```{r}
+#| fig-width: 7.5
+#| fig-asp: 0.618
+#| fig-cap: Amount of Waste Produced Based on Experiment
+#| label: fig-waste
+
+# Create the stacked bar chart
+ggplot(tidy_data, aes(x = experiment_type, y = total_volume, fill = tool_used)) +
+  geom_bar(stat = "identity", position = "stack") +
+  labs(x = "Experiment Type", y = "Total Volume (mL)", fill = "Waste Type", 
+       title = "Amount of Waste Produced Based on Experiment") +
+  theme_clean()
 ```
 
 # Conclusions
