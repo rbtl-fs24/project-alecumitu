@@ -59,3 +59,5 @@ tidy_data <- tidy_data |>
 # Save the new data
 write.csv(tidy_data, "data/processed/tidy_data.csv")
 write_rds(tidy_data, "data/processed/tidy_data.rds")
+write.csv(tidy_data, "data/final/tidy_data.csv")
+write_rds(tidy_data, "data/final/tidy_data.rds")

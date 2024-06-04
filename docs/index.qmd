@@ -40,30 +40,10 @@ In @tbl-survey_metrics we can see that...
 #| label: tbl-survey_metrics
 #| tbl-cap: Statistics of Survey Respondents
 
-processed_data <- read_rds(here::here("data/processed/processed_data.rds"))
-
-# Calculate the summary statistics
-summary_stats <- processed_data |>
-  summarize(
-    num_respondents = n(),
-    gender_pct = paste0(
-      round(sum(gender == "Woman") / num_respondents * 100, 2), "% Women, ",
-      round(sum(gender == "Man") / num_respondents * 100, 2), "% Men"
-    ),
-    support_opinion_pct = paste0(
-      round(sum(support_opinion == "Yes") / num_respondents * 100, 2), "% Yes, ",
-      round(sum(support_opinion == "Maybe") / num_respondents * 100, 2), "% Maybe"
-    ),
-    position_pct = paste0(
-      round(sum(position == "Post-doc") / num_respondents * 100, 2), "% Post-doc, ",
-      round(sum(position == "Doctorate") / num_respondents * 100, 2), "% Doctorate, ",
-      round(sum(position %in% c("Master's Thesis", "Master's Semester Project")) / num_respondents * 100, 2), "% Master, ",
-      round(sum(position == "Bachelor's Thesis") / num_respondents * 100, 2), "% Bachelor"
-    )
-  )
+survey_metrics <- read_rds(here::here("data/final/survey_metrics.rds"))
 
 # Create the table using gt()
-summary_stats |>
+survey_metrics |>
   gt() |>
   cols_label(
     num_respondents = "Number of Respondents",
@@ -98,28 +78,15 @@ summary_stats |>
 
 # Results
 
-```{r}
-tidy_data <- read_rds(here::here("data/processed/tidy_data.rds"))
-
-summary_stats <- tidy_data |>
-  group_by(tool_used) |>
-  summarise(
-    count = sum(quantity),
-    mean = round(mean(quantity), 1),
-    median = round(median(quantity), 1),
-    sd = round(sd(quantity), 1)
-  )
-
-
-```
-
 See @tbl-tools for data about tools.
 
 ```{r}
 #| label: tbl-tools
 #| tbl-cap: Average number of single-use lab tools.
 
-summary_stats |> 
+tools <- read_rds(here::here("data/final/tools.rds"))
+
+tools |> 
   gt() |> 
   tab_header(title = "Summary Statistics for Each Tool Used") |> 
   cols_label(
@@ -139,6 +106,8 @@ In @fig-waste we see that....
 #| fig-cap: Amount of Waste Produced Based on Experiment
 #| label: fig-waste
 
+tidy_data <- read_rds(here::here("data/final/tidy_data.rds"))
+
 # Create the stacked bar chart
 ggplot(tidy_data, aes(x = experiment_type, y = total_volume, fill = tool_used)) +
   geom_bar(stat = "identity", position = "stack") +
@@ -154,7 +123,9 @@ In @fig-material we can see that...
 #| fig-asp: 0.618
 #| fig-cap: Amount of Different Waste Materials Produced Based on Experiment
 #| label: fig-material
-#| 
+
+tidy_data <- read_rds(here::here("data/final/tidy_data.rds"))
+
 ggplot(tidy_data, aes(x = total_volume, y = material, fill = experiment_type)) +
   geom_bar(stat = "identity", position = "dodge") +
   labs(x = "Total Volume (mL)", y = "Waste Material", fill = "Experiment Type") +
