@@ -2,7 +2,7 @@
 
 ## General information
 
-1.  Title of Dataset: Amount of single use Waste in a Biology Lab
+1.  Title of Dataset: Amount of single-use Waste in a Biology Lab
 
 2.  Author Information
 

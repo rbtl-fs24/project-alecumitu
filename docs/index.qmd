@@ -1,6 +1,6 @@
 ---
 title: Capstone Project
-subtitle: How does weekly the usage of single-use materials differ in a biology lab based on the type of experiment conducted?
+subtitle: How does the weekly usage of single-use materials differ in a biology lab based on the type of experiment conducted?
 author: 
   - name: Alexandru Mitu
     orcid: 0009-0003-9363-2495
@@ -10,8 +10,11 @@ author:
         url: https://ethz.ch/de.html
 date: today
 abstract: 
-  This study analyzed the usage of single-use materials in a biology laboratory at ETH Zürich, focusing on lab tools that end up as non-recyclable waste. The results show that new experiments generated the most waste overall, particularly in terms of tubes, flasks, and serological pipettes, followed by follow-up experiments and routine experiments. In about a week of surveying the people in the lab, it was estimated that about 3.2 liters of waste were produced, out of which 60% is plastic. 
+  This study analyzed the usage of single-use materials in a biology laboratory at ETH Zürich, focusing on lab tools that end up as non-recyclable waste. The results show that new experiments generated the most waste overall, particularly in terms of tubes, flasks, and serological pipettes, followed by follow-up experiments and routine experiments. In about a week of surveying the people in the lab, it was estimated that about 3.2 liters of waste were produced, out of which 60% was plastic. 
 license: "CC BY"
+citation: 
+  container-title: RBTL
+  url: https://rbtl-fs24.github.io/project-alecumitu/
 bibliography: bibliography.bib
 editor: visual
 table-of-contents: true 
@@ -29,19 +32,19 @@ library(readr)
 
 # Introduction
 
-Waste management in laboratories is a pressing concern due to the significant amounts of single-use materials, such as plastic tubes, gloves, and pipette tips generated during various experiments. These numbers tend to be even higher in the context of biology labs, due to sterility requirements associated to their research. For example, @urbina2015labs estimates that laboratories doing biological, medical or agricultural research generated about 5.5 million tonnes of plastic waste in 2014, which is the equivalent of 83% of all plastic recycled in 2012. Not only does this contribute to the rapid increase of plastic that potentially ends up in landfills, but also to the amplification of the greenhouse effect.
+Waste management in laboratories is a pressing concern due to the significant amounts of single-use materials, such as plastic tubes, gloves, and pipette tips generated during various experiments. These numbers tend to be even higher in the context of biology labs, due to sterility requirements associated with their research. For example, @urbina2015labs estimates that laboratories doing biological, medical, or agricultural research generated about 5.5 million tonnes of plastic waste in 2014, which is the equivalent of 83% of all plastic recycled in 2012. Not only does this contribute to the rapid increase of plastic that potentially ends up in landfills, but also to the amplification of the greenhouse effect.
 
 To better understand the usage of single-use materials in biology labs, this project surveyed the Macromolecular Engineering Lab at ETH Zürich. The survey investigated how the usage of single-use materials in a week differs based on the type of experiment conducted. By analyzing the data collected, this research aims to provide valuable insights for optimizing waste management practices in biology labs and reducing the environmental footprint of laboratory activities, which is estimated to be about one-third of all indirect greenhouse gas emissions at ETH. (@greenlabs)
 
 # Methods
 
-Getting inspiration from @alves2021case, I decided to focus on lab tools that go on the route of the biohazard waste, since they are unsuitable for recycling. That means, I specifically asked in the survey about the consumption of waste that is placed in the special trash bags that are going to be placed in the autoclave. To make it easier to calculate the volume of produced singe-use waste, I had to ignore auxiliary biohazard waste such as tissues, gauze, or packaging. Therefore, the values presented in the following report are most likely an underestimation of the actual non-recyclable lab trash amount, but it can still provide a rough estimate of the minimum volume of generated waste.
+Getting inspiration from @alves2021case, I decided to focus on lab tools that go on the route of biohazard waste, since they are unsuitable for recycling. That means, I specifically asked in the survey about the consumption of waste that is placed in the special trash bags that are going to be placed in the autoclave. To make it easier to calculate the volume of produced single-use waste, I had to ignore auxiliary biohazard waste such as tissues, gauze, or packaging. Therefore, the values presented in the following report are most likely an underestimation of the actual non-recyclable lab trash amount, but it can still provide a rough estimate of the minimum volume of generated waste.
 
 To be more precise, the data was collected inside the biology lab from the people who specifically worked under the biohood. This decision was made because only the people who work under the biohood produce the biohazard waste. Moreover, the hoods are a sterile environment, so there is a tendency to use more single-use materials.
 
-The survey included identification questions, and tool-specific questions and also gave the respondents the chance to add any other waste they produced. Nevertheless, the waste that was not already specified in the questionnaire was ignored in the data processing, due to the negligible volumes. To collect the data, a Google Form was made (see values in data/raw/raw_data.csv). The form was promoted verbally in the lab, as well as on their official WhatsApp group. Moreover, to make it easier to fill out the form, I made QR codes for the online form and printed them on paper sheets, which were glued in the biology lab, especially on the bio hoods.
+The survey included identification questions, and tool-specific questions and also gave the respondents the chance to add any other waste they produced. Nevertheless, the waste that was not already specified in the questionnaire was ignored in the data processing, due to the negligible volumes. To collect the data, a Google Form was made (see values in data/raw/raw_data.csv). The form was promoted verbally in the lab, as well as on their official WhatsApp group. Moreover, to make it easier to fill out the form, I made QR codes for the online form and printed them on paper sheets, which were glued in the biology lab, especially on the bio hoods. The data was cleaned of typos and then stored in data/processed/processed_data.csv. In the end, a tidy version of the data was created (data/final/tidy_data.csv), which represented the basis of all the further processing I did to generate tables and figures.
 
-In @tbl-survey_metrics we can easily get a glimpse of who filled in the survey. The lab has about 45 people working there, so 15 respondents is a fairly good percentage, considering that not all research is done in the biology lab. The gender distribution also reflects the reality since the Macromolecular Engineering Lab also has a roughly equal number of people identifying as men or women. A good result of the survey is described in the third column, which shows that no one believes the lab does not receive support regarding waste management. This aligns with the efforts of ETH to make its labs greener. Lastly, the high percentage of Bachelor's students does not in fact give much information about the waste generation practices in the lab. Normally, only doctorate candidates, post-docs, and full researchers are considered permanent members of the lab so their behavior would be more relevant to this research. However, at the time the survey was conducted, the Bachelor's students were at the end of their projects and therefore used the bio lab more often.
+In @tbl-survey_metrics we can easily get a glimpse of who filled in the survey. The lab has about 45 people working there, so 15 respondents is a fairly good percentage, considering that not all research is done in the biology lab. The gender distribution also reflects the reality since the Macromolecular Engineering Lab also has a roughly equal number of people identifying as men or women. A good result of the survey is described in the third column, which shows that no one believes the lab does not receive support regarding waste management. This aligns with the efforts of ETH to make its labs greener. Lastly, the high percentage of Bachelor's students does not give much information about the waste generation practices in the lab. Normally, only doctorate candidates, post-docs, and full researchers are considered permanent members of the lab so their behavior would be more relevant to this research. However, at the time the survey was conducted, the Bachelor's students were at the end of their projects and therefore used the bio lab more often.
 
 ```{r}
 #| label: tbl-survey_metrics
@@ -82,7 +85,7 @@ A last remark about the way the data was collected is related to the time of the
 
 Based on my experience as a student working in the Macromolecular Engineering Lab, the results accurately describe the reality of the biology lab.
 
-In @tbl-tools we can see the data about the tools used during experiments. The equipment used the most are pipette tips, tubes, and gloves. It makes sense that pipette tips are mostly used because we usually work with small volumes, and pipettes range from a few microliters to one milliliter. Moreover, values for pipette tips were gathered collectively among different pipette volumes and approximated to 1 mL since most of them have this exact volume and the others are so small they could be neglected. Serological pipettes show lower numbers since they have the biggest volume and their impact will be presented further in the report. A surprising number was associated with the glass tips, which are only used for cleaning the recipients. There were not so many flasks thrown away because this type of recipient is usually used over one week since one of their purposes is cell culturing.
+In @tbl-tools we can see the data about the tools used during experiments. The equipment used the most are pipette tips, tubes, and gloves. It makes sense that pipette tips are mostly used because we usually work with small volumes, and pipettes range from a few microliters to one milliliter. Moreover, values for pipette tips were gathered collectively among different pipette volumes and approximated to 1 mL since most of them have this exact volume and the others are so small they could be neglected. Serological pipettes show lower numbers since they have the biggest volume and their impact will be presented further in the report. A surprising number was associated with the glass tips, which are only used for cleaning the lab containers. There were not so many flasks thrown away because this type of container is usually used over one week since their main purpose is cell culturing.
 
 ```{r}
 #| label: tbl-tools
@@ -106,7 +109,7 @@ In @fig-waste we see the dependence between the total volume of waste and the ty
 
 Interestingly, roughly the same number of glove pairs is used in each experiment. This tells us that we cannot and probably should not try to reduce glove waste because gloves ensure sterility, which is crucial for accurate results in biological research.
 
-In total about 3.2 liters of waste was produced, out of which half during new experiments, while only 20% in routine experiments. This illustrates that the students and researchers learned to reduce their waste in routine experiments, proving that proper planning and experience can lead to waste reduction.
+In total about 3.2 liters of waste was produced, out of which half was during new experiments, and only 20% during routine experiments. This illustrates that the students and researchers learned to reduce their waste in routine experiments, proving that proper planning and experience can lead to waste reduction.
 
 ```{r}
 #| fig-width: 7.5
@@ -126,7 +129,7 @@ ggplot(tidy_data, aes(x = experiment_type, y = total_volume, fill = tool_used)) 
 
 Based on the tools used in experiments, we can go one step further and study the materials they are made of. In @fig-material we can see that plastic dominates, followed by latex and glass. While glass is not a critical type of waste because it can be directly autoclaved and then recycled or reused for other purposes, the plastic used in the lab ends its life cycle there. Most volume is produced by polystyrene and polypropylene, namely the materials used for flasks and tubes, which are rather big. We know that this type of plastic cannot be recycled, but it is preferred in this context because it can be sterilized easily, is resistant, and does not promote bacterial growth.
 
-We see that 1028 mL of polystyrene, 640 ml of polypropylene and 239 ml of polyethylene was produced, which amounts to 1907 mL of plastic, or about 60% of total waste. Glass and latex each take 20% of total trash production in the lab. This grouped bar plot depicts the same trend from @fig-waste, namely that most waste is generated during new experiments.
+We see that 1028 mL of polystyrene, 640 ml of polypropylene, and 239 ml of polyethylene were produced, which amounts to 1907 mL of plastic, or about 60% of total waste. Glass and latex each take 20% of total trash production in the lab. This grouped bar plot depicts the same trend from @fig-waste, namely that most waste is generated during new experiments.
 
 ```{r}
 #| fig-width: 7.5
