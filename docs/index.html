@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Alexandru Mitu">
-<meta name="dcterms.date" content="2024-06-05">
+<meta name="dcterms.date" content="2024-06-06">
 
-<title>Capstone Project</title>
+<title>How does the weekly usage of single-use materials differ in a biology lab based on the type of experiment conducted?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,9 +102,20 @@ div.csl-indent {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#data-collection-processing" id="toc-data-collection-processing" class="nav-link" data-scroll-target="#data-collection-processing">Data Collection &amp; Processing</a></li>
+  <li><a href="#survey-metrics" id="toc-survey-metrics" class="nav-link" data-scroll-target="#survey-metrics">Survey Metrics</a></li>
+  <li><a href="#remarks" id="toc-remarks" class="nav-link" data-scroll-target="#remarks">Remarks</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#lab-tools-distribution" id="toc-lab-tools-distribution" class="nav-link" data-scroll-target="#lab-tools-distribution">Lab Tools Distribution</a></li>
+  <li><a href="#volume-of-waste-produced-based-on-experiment-type" id="toc-volume-of-waste-produced-based-on-experiment-type" class="nav-link" data-scroll-target="#volume-of-waste-produced-based-on-experiment-type">Volume of Waste Produced Based on Experiment Type</a></li>
+  <li><a href="#which-materials-are-mostly-used-in-the-lab" id="toc-which-materials-are-mostly-used-in-the-lab" class="nav-link" data-scroll-target="#which-materials-are-mostly-used-in-the-lab">Which Materials are Mostly Used in the Lab?</a></li>
+  </ul></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -113,8 +124,8 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Capstone Project</h1>
-<p class="subtitle lead">How does the weekly usage of single-use materials differ in a biology lab based on the type of experiment conducted?</p>
+<h1 class="title">How does the weekly usage of single-use materials differ in a biology lab based on the type of experiment conducted?</h1>
+<p class="subtitle lead">Capstone Project - Research Beyond the Lab 2024</p>
 </div>
 
 
@@ -140,7 +151,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 5, 2024</p>
+      <p class="date">June 6, 2024</p>
     </div>
   </div>
   
@@ -173,8 +184,13 @@ div.csl-indent {
 <section id="methods" class="level1">
 <h1>Methods</h1>
 <p>Getting inspiration from <span class="citation" data-cites="alves2021case">Alves et al. (<a href="#ref-alves2021case" role="doc-biblioref">2021</a>)</span>, I decided to focus on lab tools that go on the route of biohazard waste, since they are unsuitable for recycling. That means, I specifically asked in the survey about the consumption of waste that is placed in the special trash bags that are going to be placed in the autoclave. To make it easier to calculate the volume of produced single-use waste, I had to ignore auxiliary biohazard waste such as tissues, gauze, or packaging. Therefore, the values presented in the following report are most likely an underestimation of the actual non-recyclable lab trash amount, but it can still provide a rough estimate of the minimum volume of generated waste.</p>
+<section id="data-collection-processing" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection-processing">Data Collection &amp; Processing</h3>
 <p>To be more precise, the data was collected inside the biology lab from the people who specifically worked under the biohood. This decision was made because only the people who work under the biohood produce the biohazard waste. Moreover, the hoods are a sterile environment, so there is a tendency to use more single-use materials.</p>
 <p>The survey included identification questions, and tool-specific questions and also gave the respondents the chance to add any other waste they produced. Nevertheless, the waste that was not already specified in the questionnaire was ignored in the data processing, due to the negligible volumes. To collect the data, a Google Form was made (see values in data/raw/raw_data.csv). The form was promoted verbally in the lab, as well as on their official WhatsApp group. Moreover, to make it easier to fill out the form, I made QR codes for the online form and printed them on paper sheets, which were glued in the biology lab, especially on the bio hoods. The data was cleaned of typos and then stored in data/processed/processed_data.csv. In the end, a tidy version of the data was created (data/final/tidy_data.csv), which represented the basis of all the further processing I did to generate tables and figures.</p>
+</section>
+<section id="survey-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="survey-metrics">Survey Metrics</h3>
 <p>In <a href="#tbl-survey_metrics" class="quarto-xref">Table&nbsp;1</a> we can easily get a glimpse of who filled in the survey. The lab has about 45 people working there, so 15 respondents is a fairly good percentage, considering that not all research is done in the biology lab. The gender distribution also reflects the reality since the Macromolecular Engineering Lab also has a roughly equal number of people identifying as men or women. A good result of the survey is described in the third column, which shows that no one believes the lab does not receive support regarding waste management. This aligns with the efforts of ETH to make its labs greener. Lastly, the high percentage of Bachelor’s students does not give much information about the waste generation practices in the lab. Normally, only doctorate candidates, post-docs, and full researchers are considered permanent members of the lab so their behavior would be more relevant to this research. However, at the time the survey was conducted, the Bachelor’s students were at the end of their projects and therefore used the bio lab more often.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>survey_metrics <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/final/survey_metrics.rds"</span>))</span>
@@ -211,23 +227,23 @@ Table&nbsp;1: Statistics of Survey Respondents
 <div aria-describedby="tbl-survey_metrics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div>
-<div id="fqgakezlpo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fqgakezlpo table {
+<div id="nclubpsobc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nclubpsobc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fqgakezlpo thead, #fqgakezlpo tbody, #fqgakezlpo tfoot, #fqgakezlpo tr, #fqgakezlpo td, #fqgakezlpo th {
+#nclubpsobc thead, #nclubpsobc tbody, #nclubpsobc tfoot, #nclubpsobc tr, #nclubpsobc td, #nclubpsobc th {
   border-style: none;
 }
 
-#fqgakezlpo p {
+#nclubpsobc p {
   margin: 0;
   padding: 0;
 }
 
-#fqgakezlpo .gt_table {
+#nclubpsobc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -253,12 +269,12 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-left-color: #D3D3D3;
 }
 
-#fqgakezlpo .gt_caption {
+#nclubpsobc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fqgakezlpo .gt_title {
+#nclubpsobc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -270,7 +286,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-bottom-width: 0;
 }
 
-#fqgakezlpo .gt_subtitle {
+#nclubpsobc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -282,7 +298,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-top-width: 0;
 }
 
-#fqgakezlpo .gt_heading {
+#nclubpsobc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -294,13 +310,13 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-right-color: #D3D3D3;
 }
 
-#fqgakezlpo .gt_bottom_border {
+#nclubpsobc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fqgakezlpo .gt_col_headings {
+#nclubpsobc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -315,7 +331,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-right-color: #D3D3D3;
 }
 
-#fqgakezlpo .gt_col_heading {
+#nclubpsobc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -335,7 +351,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   overflow-x: hidden;
 }
 
-#fqgakezlpo .gt_column_spanner_outer {
+#nclubpsobc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -347,15 +363,15 @@ Table&nbsp;1: Statistics of Survey Respondents
   padding-right: 4px;
 }
 
-#fqgakezlpo .gt_column_spanner_outer:first-child {
+#nclubpsobc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fqgakezlpo .gt_column_spanner_outer:last-child {
+#nclubpsobc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fqgakezlpo .gt_column_spanner {
+#nclubpsobc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -367,11 +383,11 @@ Table&nbsp;1: Statistics of Survey Respondents
   width: 100%;
 }
 
-#fqgakezlpo .gt_spanner_row {
+#nclubpsobc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fqgakezlpo .gt_group_heading {
+#nclubpsobc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -397,7 +413,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   text-align: left;
 }
 
-#fqgakezlpo .gt_empty_group_heading {
+#nclubpsobc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -412,15 +428,15 @@ Table&nbsp;1: Statistics of Survey Respondents
   vertical-align: middle;
 }
 
-#fqgakezlpo .gt_from_md > :first-child {
+#nclubpsobc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fqgakezlpo .gt_from_md > :last-child {
+#nclubpsobc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fqgakezlpo .gt_row {
+#nclubpsobc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -439,7 +455,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   overflow-x: hidden;
 }
 
-#fqgakezlpo .gt_stub {
+#nclubpsobc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -452,7 +468,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   padding-right: 5px;
 }
 
-#fqgakezlpo .gt_stub_row_group {
+#nclubpsobc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -466,15 +482,15 @@ Table&nbsp;1: Statistics of Survey Respondents
   vertical-align: top;
 }
 
-#fqgakezlpo .gt_row_group_first td {
+#nclubpsobc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fqgakezlpo .gt_row_group_first th {
+#nclubpsobc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fqgakezlpo .gt_summary_row {
+#nclubpsobc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -484,16 +500,16 @@ Table&nbsp;1: Statistics of Survey Respondents
   padding-right: 5px;
 }
 
-#fqgakezlpo .gt_first_summary_row {
+#nclubpsobc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fqgakezlpo .gt_first_summary_row.thick {
+#nclubpsobc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fqgakezlpo .gt_last_summary_row {
+#nclubpsobc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -503,7 +519,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-bottom-color: #D3D3D3;
 }
 
-#fqgakezlpo .gt_grand_summary_row {
+#nclubpsobc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -513,7 +529,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   padding-right: 5px;
 }
 
-#fqgakezlpo .gt_first_grand_summary_row {
+#nclubpsobc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -523,7 +539,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-top-color: #D3D3D3;
 }
 
-#fqgakezlpo .gt_last_grand_summary_row_top {
+#nclubpsobc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -533,11 +549,11 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-bottom-color: #D3D3D3;
 }
 
-#fqgakezlpo .gt_striped {
+#nclubpsobc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fqgakezlpo .gt_table_body {
+#nclubpsobc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -546,7 +562,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-bottom-color: #D3D3D3;
 }
 
-#fqgakezlpo .gt_footnotes {
+#nclubpsobc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -560,7 +576,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-right-color: #D3D3D3;
 }
 
-#fqgakezlpo .gt_footnote {
+#nclubpsobc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -569,7 +585,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   padding-right: 5px;
 }
 
-#fqgakezlpo .gt_sourcenotes {
+#nclubpsobc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -583,7 +599,7 @@ Table&nbsp;1: Statistics of Survey Respondents
   border-right-color: #D3D3D3;
 }
 
-#fqgakezlpo .gt_sourcenote {
+#nclubpsobc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -591,63 +607,63 @@ Table&nbsp;1: Statistics of Survey Respondents
   padding-right: 5px;
 }
 
-#fqgakezlpo .gt_left {
+#nclubpsobc .gt_left {
   text-align: left;
 }
 
-#fqgakezlpo .gt_center {
+#nclubpsobc .gt_center {
   text-align: center;
 }
 
-#fqgakezlpo .gt_right {
+#nclubpsobc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fqgakezlpo .gt_font_normal {
+#nclubpsobc .gt_font_normal {
   font-weight: normal;
 }
 
-#fqgakezlpo .gt_font_bold {
+#nclubpsobc .gt_font_bold {
   font-weight: bold;
 }
 
-#fqgakezlpo .gt_font_italic {
+#nclubpsobc .gt_font_italic {
   font-style: italic;
 }
 
-#fqgakezlpo .gt_super {
+#nclubpsobc .gt_super {
   font-size: 65%;
 }
 
-#fqgakezlpo .gt_footnote_marks {
+#nclubpsobc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fqgakezlpo .gt_asterisk {
+#nclubpsobc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fqgakezlpo .gt_indent_1 {
+#nclubpsobc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fqgakezlpo .gt_indent_2 {
+#nclubpsobc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fqgakezlpo .gt_indent_3 {
+#nclubpsobc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fqgakezlpo .gt_indent_4 {
+#nclubpsobc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fqgakezlpo .gt_indent_5 {
+#nclubpsobc .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -681,11 +697,17 @@ Table&nbsp;1: Statistics of Survey Respondents
 </figure>
 </div>
 </div>
+</section>
+<section id="remarks" class="level3">
+<h3 class="anchored" data-anchor-id="remarks">Remarks</h3>
 <p>A last remark about the way the data was collected is related to the time of the experiments. Based on personal observations (actual data not collected), the total time of the experiments conducted by the respondents was about 16 hours, which is the equivalent of two full working days. Thus, although the survey was done over one week, not all experiments were recorded in the survey, leading to lower volumes of waste. Moreover, there are two bio hoods in the biology lab, which are permanently used during a busy week. That means that a total of 80 hours of actual experiments can be done in a week. As a result, the volume of waste found in this survey is probably the equivalent of 20% of the real amount.</p>
+</section>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
 <p>Based on my experience as a student working in the Macromolecular Engineering Lab, the results accurately describe the reality of the biology lab.</p>
+<section id="lab-tools-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="lab-tools-distribution">Lab Tools Distribution</h3>
 <p>In <a href="#tbl-tools" class="quarto-xref">Table&nbsp;2</a> we can see the data about the tools used during experiments. The equipment used the most are pipette tips, tubes, and gloves. It makes sense that pipette tips are mostly used because we usually work with small volumes, and pipettes range from a few microliters to one milliliter. Moreover, values for pipette tips were gathered collectively among different pipette volumes and approximated to 1 mL since most of them have this exact volume and the others are so small they could be neglected. Serological pipettes show lower numbers since they have the biggest volume and their impact will be presented further in the report. A surprising number was associated with the glass tips, which are only used for cleaning the lab containers. There were not so many flasks thrown away because this type of container is usually used over one week since their main purpose is cell culturing.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tools <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/final/tools.rds"</span>))</span>
@@ -708,23 +730,23 @@ Table&nbsp;2: Average number of single-use lab tools.
 <div aria-describedby="tbl-tools-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div>
-<div id="xqezeyqpcl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xqezeyqpcl table {
+<div id="hjyjraucnd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hjyjraucnd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xqezeyqpcl thead, #xqezeyqpcl tbody, #xqezeyqpcl tfoot, #xqezeyqpcl tr, #xqezeyqpcl td, #xqezeyqpcl th {
+#hjyjraucnd thead, #hjyjraucnd tbody, #hjyjraucnd tfoot, #hjyjraucnd tr, #hjyjraucnd td, #hjyjraucnd th {
   border-style: none;
 }
 
-#xqezeyqpcl p {
+#hjyjraucnd p {
   margin: 0;
   padding: 0;
 }
 
-#xqezeyqpcl .gt_table {
+#hjyjraucnd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -750,12 +772,12 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-left-color: #D3D3D3;
 }
 
-#xqezeyqpcl .gt_caption {
+#hjyjraucnd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xqezeyqpcl .gt_title {
+#hjyjraucnd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -767,7 +789,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-bottom-width: 0;
 }
 
-#xqezeyqpcl .gt_subtitle {
+#hjyjraucnd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -779,7 +801,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-top-width: 0;
 }
 
-#xqezeyqpcl .gt_heading {
+#hjyjraucnd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -791,13 +813,13 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-right-color: #D3D3D3;
 }
 
-#xqezeyqpcl .gt_bottom_border {
+#hjyjraucnd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xqezeyqpcl .gt_col_headings {
+#hjyjraucnd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -812,7 +834,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-right-color: #D3D3D3;
 }
 
-#xqezeyqpcl .gt_col_heading {
+#hjyjraucnd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -832,7 +854,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   overflow-x: hidden;
 }
 
-#xqezeyqpcl .gt_column_spanner_outer {
+#hjyjraucnd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -844,15 +866,15 @@ Table&nbsp;2: Average number of single-use lab tools.
   padding-right: 4px;
 }
 
-#xqezeyqpcl .gt_column_spanner_outer:first-child {
+#hjyjraucnd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xqezeyqpcl .gt_column_spanner_outer:last-child {
+#hjyjraucnd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xqezeyqpcl .gt_column_spanner {
+#hjyjraucnd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -864,11 +886,11 @@ Table&nbsp;2: Average number of single-use lab tools.
   width: 100%;
 }
 
-#xqezeyqpcl .gt_spanner_row {
+#hjyjraucnd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xqezeyqpcl .gt_group_heading {
+#hjyjraucnd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -894,7 +916,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   text-align: left;
 }
 
-#xqezeyqpcl .gt_empty_group_heading {
+#hjyjraucnd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -909,15 +931,15 @@ Table&nbsp;2: Average number of single-use lab tools.
   vertical-align: middle;
 }
 
-#xqezeyqpcl .gt_from_md > :first-child {
+#hjyjraucnd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xqezeyqpcl .gt_from_md > :last-child {
+#hjyjraucnd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xqezeyqpcl .gt_row {
+#hjyjraucnd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -936,7 +958,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   overflow-x: hidden;
 }
 
-#xqezeyqpcl .gt_stub {
+#hjyjraucnd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -949,7 +971,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   padding-right: 5px;
 }
 
-#xqezeyqpcl .gt_stub_row_group {
+#hjyjraucnd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -963,15 +985,15 @@ Table&nbsp;2: Average number of single-use lab tools.
   vertical-align: top;
 }
 
-#xqezeyqpcl .gt_row_group_first td {
+#hjyjraucnd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xqezeyqpcl .gt_row_group_first th {
+#hjyjraucnd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xqezeyqpcl .gt_summary_row {
+#hjyjraucnd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -981,16 +1003,16 @@ Table&nbsp;2: Average number of single-use lab tools.
   padding-right: 5px;
 }
 
-#xqezeyqpcl .gt_first_summary_row {
+#hjyjraucnd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xqezeyqpcl .gt_first_summary_row.thick {
+#hjyjraucnd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xqezeyqpcl .gt_last_summary_row {
+#hjyjraucnd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1000,7 +1022,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-bottom-color: #D3D3D3;
 }
 
-#xqezeyqpcl .gt_grand_summary_row {
+#hjyjraucnd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1010,7 +1032,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   padding-right: 5px;
 }
 
-#xqezeyqpcl .gt_first_grand_summary_row {
+#hjyjraucnd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1020,7 +1042,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-top-color: #D3D3D3;
 }
 
-#xqezeyqpcl .gt_last_grand_summary_row_top {
+#hjyjraucnd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1030,11 +1052,11 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-bottom-color: #D3D3D3;
 }
 
-#xqezeyqpcl .gt_striped {
+#hjyjraucnd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xqezeyqpcl .gt_table_body {
+#hjyjraucnd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1043,7 +1065,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-bottom-color: #D3D3D3;
 }
 
-#xqezeyqpcl .gt_footnotes {
+#hjyjraucnd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1057,7 +1079,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-right-color: #D3D3D3;
 }
 
-#xqezeyqpcl .gt_footnote {
+#hjyjraucnd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1066,7 +1088,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   padding-right: 5px;
 }
 
-#xqezeyqpcl .gt_sourcenotes {
+#hjyjraucnd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1080,7 +1102,7 @@ Table&nbsp;2: Average number of single-use lab tools.
   border-right-color: #D3D3D3;
 }
 
-#xqezeyqpcl .gt_sourcenote {
+#hjyjraucnd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1088,63 +1110,63 @@ Table&nbsp;2: Average number of single-use lab tools.
   padding-right: 5px;
 }
 
-#xqezeyqpcl .gt_left {
+#hjyjraucnd .gt_left {
   text-align: left;
 }
 
-#xqezeyqpcl .gt_center {
+#hjyjraucnd .gt_center {
   text-align: center;
 }
 
-#xqezeyqpcl .gt_right {
+#hjyjraucnd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xqezeyqpcl .gt_font_normal {
+#hjyjraucnd .gt_font_normal {
   font-weight: normal;
 }
 
-#xqezeyqpcl .gt_font_bold {
+#hjyjraucnd .gt_font_bold {
   font-weight: bold;
 }
 
-#xqezeyqpcl .gt_font_italic {
+#hjyjraucnd .gt_font_italic {
   font-style: italic;
 }
 
-#xqezeyqpcl .gt_super {
+#hjyjraucnd .gt_super {
   font-size: 65%;
 }
 
-#xqezeyqpcl .gt_footnote_marks {
+#hjyjraucnd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xqezeyqpcl .gt_asterisk {
+#hjyjraucnd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xqezeyqpcl .gt_indent_1 {
+#hjyjraucnd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xqezeyqpcl .gt_indent_2 {
+#hjyjraucnd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xqezeyqpcl .gt_indent_3 {
+#hjyjraucnd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xqezeyqpcl .gt_indent_4 {
+#hjyjraucnd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xqezeyqpcl .gt_indent_5 {
+#hjyjraucnd .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1243,7 +1265,10 @@ Table&nbsp;2: Average number of single-use lab tools.
 </figure>
 </div>
 </div>
-<p>In <a href="#fig-waste" class="quarto-xref">Figure&nbsp;1</a> we see the dependence between the total volume of waste and the type of experiment conducted. I wanted to investigate this relationship because all experiments are approached equally in terms of protocols and materials used. However, it makes sense that new experiments produce the most waste because the researcher does not yet know what tools they need and how to effectively use them to reduce waste. This can be seen in the figure, where most tubes, flasks, and serological pipettes are used for new experiments. Therefore, when planning an experiment, we can now think ahead if we actually need so many consumables or if we can reduce their numbers.</p>
+</section>
+<section id="volume-of-waste-produced-based-on-experiment-type" class="level3">
+<h3 class="anchored" data-anchor-id="volume-of-waste-produced-based-on-experiment-type">Volume of Waste Produced Based on Experiment Type</h3>
+<p>In <a href="#fig-waste" class="quarto-xref">Figure&nbsp;1</a> we see the dependence between the total volume of waste and the type of experiment conducted. I wanted to investigate this relationship because all experiments are approached equally in terms of protocols and materials used. However, it makes sense that new experiments produce the most waste because the researcher does not yet know what tools they need and how to effectively use them to reduce waste. This can be seen in the figure, where most tubes, flasks, and serological pipettes are used for new experiments. Therefore, when planning a new experiment, we should think ahead if we actually need so many consumables or if we can reduce their numbers.</p>
 <p>Interestingly, roughly the same number of glove pairs is used in each experiment. This tells us that we cannot and probably should not try to reduce glove waste because gloves ensure sterility, which is crucial for accurate results in biological research.</p>
 <p>In total about 3.2 liters of waste was produced, out of which half was during new experiments, and only 20% during routine experiments. This illustrates that the students and researchers learned to reduce their waste in routine experiments, proving that proper planning and experience can lead to waste reduction.</p>
 <div class="cell">
@@ -1268,6 +1293,9 @@ Figure&nbsp;1: Amount of Waste Produced Based on Experiment
 </div>
 </div>
 </div>
+</section>
+<section id="which-materials-are-mostly-used-in-the-lab" class="level3">
+<h3 class="anchored" data-anchor-id="which-materials-are-mostly-used-in-the-lab">Which Materials are Mostly Used in the Lab?</h3>
 <p>Based on the tools used in experiments, we can go one step further and study the materials they are made of. In <a href="#fig-material" class="quarto-xref">Figure&nbsp;2</a> we can see that plastic dominates, followed by latex and glass. While glass is not a critical type of waste because it can be directly autoclaved and then recycled or reused for other purposes, the plastic used in the lab ends its life cycle there. Most volume is produced by polystyrene and polypropylene, namely the materials used for flasks and tubes, which are rather big. We know that this type of plastic cannot be recycled, but it is preferred in this context because it can be sterilized easily, is resistant, and does not promote bacterial growth.</p>
 <p>We see that 1028 mL of polystyrene, 640 ml of polypropylene, and 239 ml of polyethylene were produced, which amounts to 1907 mL of plastic, or about 60% of total waste. Glass and latex each take 20% of total trash production in the lab. This grouped bar plot depicts the same trend from <a href="#fig-waste" class="quarto-xref">Figure&nbsp;1</a>, namely that most waste is generated during new experiments.</p>
 <div class="cell">
@@ -1291,6 +1319,7 @@ Figure&nbsp;2: Amount of Different Waste Materials Produced Based on Experiment
 </div>
 </div>
 </section>
+</section>
 <section id="conclusions" class="level1">
 <h1>Conclusions</h1>
 <ul>
@@ -1298,6 +1327,15 @@ Figure&nbsp;2: Amount of Different Waste Materials Produced Based on Experiment
 <li><p>new experiments produce most waste, especially made of plastic and glass</p></li>
 <li><p>latex glove usage is independent of the type of experiment</p></li>
 <li><p>on average each person produces 303 mL of waste per experiment disregarding the type of experiment (calculated using the mean values from <a href="#tbl-tools" class="quarto-xref">Table&nbsp;2</a>)</p></li>
+</ul>
+</section>
+<section id="acknowledgments" class="level1">
+<h1>Acknowledgments</h1>
+<p>I acknowledge using perplexity.ai as a helping tool for this project. I used it in the following steps of my project:</p>
+<ul>
+<li><p>in 03-data_tidy.R to transform the processed_data into a tidy data format. Namely, I took from perplexity.ai the functions cols, names_to, and values_to to switch all the columns which included the tools used into two columns with names: “tool_used” and “quantity”.</p></li>
+<li><p>in 04-data_table_1.R by taking the paste0 function. I needed to use this to add more values into a single cell in <a href="#tbl-survey_metrics" class="quarto-xref">Table&nbsp;1</a>. For example under “Gender” I wanted to add both “Men” and “Women” such that there is only one row in the table.</p></li>
+<li><p>in writing the code for <a href="#fig-material" class="quarto-xref">Figure&nbsp;2</a> because I did not know how to make a grouper bar plot, so I took the “position = ‘dodge’” option from AI</p></li>
 </ul>
 </section>
 <section id="references" class="level1 unnumbered">
@@ -1317,8 +1355,9 @@ Urbina, Mauricio A., Andrew J. R. Watts, and Erin E. Reardon. 2015. <span>“Lab
 </div>
 </div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{mitu2024,
   author = {Mitu, Alexandru},
-  title = {Capstone {Project}},
-  date = {2024-06-05},
+  title = {How Does the Weekly Usage of Single-Use Materials Differ in a
+    Biology Lab Based on the Type of Experiment Conducted?},
+  date = {2024-06-06},
   url = {https://rbtl-fs24.github.io/project-alecumitu/},
   langid = {en},
   abstract = {This study analyzed the usage of single-use materials in a
@@ -1331,8 +1370,9 @@ Urbina, Mauricio A., Andrew J. R. Watts, and Erin E. Reardon. 2015. <span>“Lab
     produced, out of which 60\% was plastic.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-mitu2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Mitu, Alexandru. 2024. <span>“Capstone Project.”</span> RBTL. June 5,
-2024. <a href="https://rbtl-fs24.github.io/project-alecumitu/">https://rbtl-fs24.github.io/project-alecumitu/</a>.
+Mitu, Alexandru. 2024. <span>“How Does the Weekly Usage of Single-Use
+Materials Differ in a Biology Lab Based on the Type of Experiment
+Conducted?”</span> RBTL. June 6, 2024. <a href="https://rbtl-fs24.github.io/project-alecumitu/">https://rbtl-fs24.github.io/project-alecumitu/</a>.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
